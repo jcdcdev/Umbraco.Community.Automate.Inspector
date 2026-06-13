@@ -1,0 +1,41 @@
+﻿@using Umbraco.Automate.Core.Actions
+@using Umbraco.Extensions
+@inherits Umbraco.Community.SimpleTrees.Web.SimpleTreeViewPage
+@inject ActionCollection Actions
+@{
+    if (!Model.IsRoot)
+    {
+        var group = Model.Unique;
+        var actions = Actions.Where(x => x.Group.InvariantEquals(group)).ToList();
+        <uui-box headline="@group">
+            @if (actions.Any())
+            {
+                <uui-table aria-label="Action Fields">
+                    <uui-table-head>
+                        <uui-table-head-cell>Name</uui-table-head-cell>
+                        <uui-table-head-cell>Alias</uui-table-head-cell>
+                        <uui-table-head-cell>Description</uui-table-head-cell>
+                    </uui-table-head>
+
+                    @foreach (var action in actions)
+                    {
+                        <uui-table-row>
+                            <uui-table-cell>@action.Name</uui-table-cell>
+                            <uui-table-cell>@action.Alias</uui-table-cell>
+                            <uui-table-cell>@action.Description</uui-table-cell>
+                        </uui-table-row>
+                    }
+                </uui-table>
+            }
+            else
+            {
+                <p>No actions found in this group.</p>
+            }
+        </uui-box>
+        return;
+    }
+}
+
+<uui-box headline="Automate Actions">
+    <p>Click on the groups below to explore the available actions.</p>
+</uui-box>
