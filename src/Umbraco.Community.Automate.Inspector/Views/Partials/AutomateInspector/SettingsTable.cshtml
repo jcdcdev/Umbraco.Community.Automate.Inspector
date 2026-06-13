@@ -1,0 +1,35 @@
+﻿@model IReadOnlyList<Umbraco.Automate.Core.Settings.EditableModelFieldDescriptor>
+@using Umbraco.Community.Automate.Inspector
+@using Umbraco.Extensions
+
+<uui-table aria-label="Fields">
+    <uui-table-head>
+        <uui-table-head-cell>Name</uui-table-head-cell>
+        <uui-table-head-cell>Alias</uui-table-head-cell>
+        <uui-table-head-cell>Type</uui-table-head-cell>
+        <uui-table-head-cell>IsRequired</uui-table-head-cell>
+        <uui-table-head-cell>IsSensitive</uui-table-head-cell>
+        <uui-table-head-cell>SupportsBindings</uui-table-head-cell>
+    </uui-table-head>
+
+    @foreach (var field in Model)
+    {
+        var fieldPropertyType = field.PropertyType;
+        var typeName = fieldPropertyType.GetTypeName();
+        var isComplex = fieldPropertyType.IsComplexType();
+        var schema = isComplex ? fieldPropertyType.GetComplexTypeSchema() : string.Empty;
+        <uui-table-row>
+            <uui-table-cell>@field.Label</uui-table-cell>
+            <uui-table-cell>@field.Key</uui-table-cell>
+            <uui-table-cell>@typeName
+                @if (!schema.IsNullOrWhiteSpace())
+                {
+                    <pre><code>@schema</code></pre>
+                }
+            </uui-table-cell>
+            <uui-table-cell>@field.IsRequired</uui-table-cell>
+            <uui-table-cell>@field.IsSensitive</uui-table-cell>
+            <uui-table-cell>@field.SupportsBindings</uui-table-cell>
+        </uui-table-row>
+    }
+</uui-table>

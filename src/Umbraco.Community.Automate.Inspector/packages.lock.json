@@ -2,14 +2,11 @@
   "version": 1,
   "dependencies": {
     "net10.0": {
-      "jcdcdev.Umbraco.Core": {
+      "JetBrains.Annotations": {
         "type": "Direct",
-        "requested": "[17.0.0, 18.0.0)",
-        "resolved": "17.0.0",
-        "contentHash": "GGQmeYFHZLx/glGA0M37Dms/EhEURGQGrK9cT5J5mGusbcSxc5c8ujl3E5UbSId32DalhKDziptygkWMEC/Z3g==",
-        "dependencies": {
-          "Umbraco.Cms.Web.Common": "[17.0.0, 18.0.0)"
-        }
+        "requested": "[2025.2.4, )",
+        "resolved": "2025.2.4",
+        "contentHash": "TwbgxAkXxY+vNEhNVx/QXjJ4vqxmepOjsgRvvImQPbHkHMMb4W+ahL3laMsxXKtNT7iMy+E1B3xkqao2hf1n3A=="
       },
       "Umbraco.Automate": {
         "type": "Direct",
@@ -144,15 +141,14 @@
           "Microsoft.Extensions.Options.DataAnnotations": "10.0.6"
         }
       },
-      "Umbraco.Community.SimpleDashboards": {
+      "Umbraco.Community.SimpleTrees": {
         "type": "Direct",
-        "requested": "[17.0.0, 18.0.0)",
-        "resolved": "17.0.0",
-        "contentHash": "V+ZDMtw/rTVO3IT4/dw3qRUUd0MkdtDZDW61Xsd7jWaaCvEQpb70aEoksOO0uzpoUA0ezvJSegKipganZmgogQ==",
+        "requested": "[17.2.1, 18.0.0)",
+        "resolved": "17.2.1",
+        "contentHash": "TD0LAi23fkGDomUlXqaLCuCfBBQKbAjq5LPJWOOY3sNeDW+KOEvGqzXKo8v5Xn+RmgWh2+wpoCuIjaxh948r7Q==",
         "dependencies": {
           "Umbraco.Cms.Api.Common": "[17.0.0, 18.0.0)",
           "Umbraco.Cms.Api.Management": "[17.0.0, 18.0.0)",
-          "Umbraco.Cms.Core": "[17.0.0, 18.0.0)",
           "Umbraco.Cms.Web.Website": "[17.0.0, 18.0.0)",
           "jcdcdev.Umbraco.Core": "[17.0.0, 18.0.0)"
         }
@@ -285,6 +281,14 @@
         "type": "Transitive",
         "resolved": "2.1.0",
         "contentHash": "Vooz1wbnnqWuS+u93tADXK5Owxo8vLJhSrZ9Ac+KpgDF3GJq9TybXXTF1TFcWILgEtRThc8AOBENEzB0TQH1JA=="
+      },
+      "jcdcdev.Umbraco.Core": {
+        "type": "Transitive",
+        "resolved": "17.0.0",
+        "contentHash": "GGQmeYFHZLx/glGA0M37Dms/EhEURGQGrK9cT5J5mGusbcSxc5c8ujl3E5UbSId32DalhKDziptygkWMEC/Z3g==",
+        "dependencies": {
+          "Umbraco.Cms.Web.Common": "[17.0.0, 18.0.0)"
+        }
       },
       "Json.More.Net": {
         "type": "Transitive",

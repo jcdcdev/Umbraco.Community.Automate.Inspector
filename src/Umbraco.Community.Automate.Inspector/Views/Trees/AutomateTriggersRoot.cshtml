@@ -1,0 +1,41 @@
+﻿@using Umbraco.Automate.Core.Triggers
+@using Umbraco.Extensions
+@inherits Umbraco.Community.SimpleTrees.Web.SimpleTreeViewPage
+@inject TriggerCollection Triggers
+@{
+    if (!Model.IsRoot)
+    {
+        var group = Model.Unique;
+        var triggers = Triggers.Where(x => x.Group.InvariantEquals(group)).ToList();
+        <uui-box headline="@group">
+            @if (triggers.Any())
+            {
+                <uui-table aria-label="Trigger Fields">
+                    <uui-table-head>
+                        <uui-table-head-cell>Name</uui-table-head-cell>
+                        <uui-table-head-cell>Alias</uui-table-head-cell>
+                        <uui-table-head-cell>Description</uui-table-head-cell>
+                    </uui-table-head>
+
+                    @foreach (var action in triggers)
+                    {
+                        <uui-table-row>
+                            <uui-table-cell>@action.Name</uui-table-cell>
+                            <uui-table-cell>@action.Alias</uui-table-cell>
+                            <uui-table-cell>@action.Description</uui-table-cell>
+                        </uui-table-row>
+                    }
+                </uui-table>
+            }
+            else
+            {
+                <p>No triggers found in this group.</p>
+            }
+        </uui-box>
+        return;
+    }
+}
+
+<uui-box headline="Automate Triggers">
+    <p>Click on the groups below to explore the available triggers.</p>
+</uui-box>

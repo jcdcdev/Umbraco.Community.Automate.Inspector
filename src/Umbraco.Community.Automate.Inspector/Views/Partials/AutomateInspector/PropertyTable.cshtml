@@ -1,0 +1,29 @@
+﻿@model IEnumerable<System.Reflection.PropertyInfo>
+@using Umbraco.Community.Automate.Inspector
+@using Umbraco.Extensions
+
+<uui-table-head>
+    <uui-table-head-cell>Alias</uui-table-head-cell>
+    <uui-table-head-cell>Type</uui-table-head-cell>
+    <uui-table-head-cell>IsNullable</uui-table-head-cell>
+</uui-table-head>
+
+@foreach (var field in Model)
+{
+    var fieldPropertyType = field.PropertyType;
+    var typeName = fieldPropertyType.GetTypeName();
+    var isNullable = Nullable.GetUnderlyingType(fieldPropertyType) != null;
+    var isComplex = fieldPropertyType.IsComplexType();
+    var schema = isComplex ? fieldPropertyType.GetComplexTypeSchema() : string.Empty;
+    <uui-table-row>
+        <uui-table-cell>@field.Name</uui-table-cell>
+        <uui-table-cell>@typeName
+            @if (!schema.IsNullOrWhiteSpace())
+            {
+                <pre><code>@schema</code></pre>
+            }
+        </uui-table-cell>
+        <uui-table-cell>@isNullable</uui-table-cell>
+    </uui-table-row>
+}
+   

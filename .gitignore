@@ -358,3 +358,5 @@ src/.idea
 .idea/
 *.csproj.DotSettings
 **/umbraco/Data/TEMP/
+.planning/
+/CLAUDE.md

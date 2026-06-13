@@ -1,0 +1,41 @@
+﻿@using System.Linq
+@using Umbraco.Automate.Core.Triggers
+@inherits Umbraco.Community.SimpleTrees.Web.SimpleTreeViewPage
+@inject TriggerCollection Triggers
+
+@{
+    var trigger = Triggers.GetByAlias(Model.Unique);
+    if (trigger == null)
+    {
+        <div class="alert alert-danger">
+            Trigger with alias '@Model.Unique' not found.
+        </div>
+        return;
+    }
+
+    var settings = trigger.GetSettingsSchema();
+    var settingsFields = settings?.Fields ?? [];
+    var outputFields = trigger.OutputType?.GetProperties().OrderBy(x => x.Name).ToList() ?? [];
+}
+
+<uui-box headline="Details" style="margin-bottom: 30px;">
+    <div>
+        <p><strong>Name:</strong> @trigger.Name</p>
+        <p><strong>Alias:</strong> @trigger.Alias</p>
+        <p><strong>Description:</strong> @trigger.Description</p>
+        <p><strong>Icon:</strong> @trigger.Icon</p>
+        <p><strong>Connection Type:</strong> @trigger.ConnectionTypeAlias</p>
+        <p><strong>Permissions:</strong> @string.Join("\n", trigger.RequiredPermissions)</p>
+        <p><strong>Sections:</strong> @string.Join("\n", trigger.RequiredSections)</p>
+    </div>
+</uui-box>
+
+<uui-box headline="Inputs" style="margin-bottom: 30px;">
+    @await Html.PartialAsync("~/Views/Partials/AutomateInspector/SettingsTable.cshtml", settingsFields)
+</uui-box>
+
+<uui-box headline="Outputs">
+    <uui-table aria-label="Outputs">
+        @await Html.PartialAsync("~/Views/Partials/AutomateInspector/PropertyTable.cshtml", outputFields)
+    </uui-table>
+</uui-box>
