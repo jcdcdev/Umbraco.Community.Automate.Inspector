@@ -43,7 +43,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Github", "Github", "{5830A8
 		..\.github\workflows\sync-branches.yml = ..\.github\workflows\sync-branches.yml
 		..\.github\workflows\update-releases.yml = ..\.github\workflows\update-releases.yml
 		..\.github\CONTRIBUTING.md = ..\.github\CONTRIBUTING.md
-		..\.github\dependabot.yml = ..\.github\dependabot.yml
 		..\.github\README.md = ..\.github\README.md
 	EndProjectSection
 EndProject
