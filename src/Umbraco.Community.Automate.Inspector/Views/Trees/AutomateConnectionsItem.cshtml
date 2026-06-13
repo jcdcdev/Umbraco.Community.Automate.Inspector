@@ -1,0 +1,30 @@
+﻿@using Umbraco.Automate.Core.Connections
+@inherits Umbraco.Community.SimpleTrees.Web.SimpleTreeViewPage
+@inject ConnectionTypeCollection Connections
+
+@{
+    var connection = Connections.GetByAlias(Model.Unique);
+    if (connection == null)
+    {
+        <div class="alert alert-danger">
+            Connection with alias '@Model.Unique' not found.
+        </div>
+        return;
+    }
+
+    var settings = connection.GetSettingsSchema();
+    var settingsFields = settings?.Fields ?? [];
+}
+
+<uui-box headline="Details" style="margin-bottom: 30px;">
+    <div>
+        <p><strong>Name:</strong> @connection.Name</p>
+        <p><strong>Alias:</strong> @connection.Alias</p>
+        <p><strong>Description:</strong> @connection.Description</p>
+        <p><strong>Icon:</strong> @connection.Icon</p>
+    </div>
+</uui-box>
+
+<uui-box headline="Inputs" style="margin-bottom: 30px;">
+    @await Html.PartialAsync("~/Views/Partials/AutomateInspector/SettingsTable.cshtml", settingsFields)
+</uui-box>
