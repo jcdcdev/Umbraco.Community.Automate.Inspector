@@ -1,0 +1,26 @@
+name: 🚀 Release
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [ closed ]
+jobs:
+  release:
+    if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Build
+        id: build
+        uses: jcdcdev/jcdcdev.Umbraco.GitHub.Build@v17
+        with:
+          project-name: Umbraco.Community.Automate.Inspector
+          project-path: src/Umbraco.Community.Automate.Inspector/Umbraco.Community.Automate.Inspector.csproj
+      - name: Release
+        uses: jcdcdev/jcdcdev.Umbraco.GitHub.Release@v17
+        with:
+          artifact-name: ${{ steps.build.outputs.artifact-name }}
+          version: ${{ steps.build.outputs.version }}
+          nuget-api-key: ${{ secrets.NUGET_API_KEY }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}

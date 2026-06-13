@@ -1,0 +1,13 @@
+name: 🏗️ Build
+on:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build
+        uses: jcdcdev/jcdcdev.Umbraco.GitHub.Build@v17
+        with:
+          project-name: Umbraco.Community.Automate.Inspector
+          project-path: src/Umbraco.Community.Automate.Inspector/Umbraco.Community.Automate.Inspector.csproj

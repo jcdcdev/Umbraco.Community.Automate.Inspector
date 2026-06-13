@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <LangVersion>12</LangVersion>
+        <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <StaticWebAssetBasePath>/</StaticWebAssetBasePath>
+        <ContentTargetFolders>.</ContentTargetFolders>
+        <Product>Umbraco.Community.Automate.Inspector</Product>
+        <PackageId>Umbraco.Community.Automate.Inspector</PackageId>
+        <Title>Simple iFrames</Title>
+        <Description></Description>
+        <PackageTags>umbraco;umbraco-marketplace</PackageTags>
+        <Authors>jcdcdev</Authors>
+        <Copyright>$([System.DateTime]::UtcNow.ToString(`yyyy`)) © James Carter</Copyright>
+        <PackageProjectUrl>https://jcdc.dev/umbraco-packages/automate-inspector</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/jcdcdev/Umbraco.Community.Automate.Inspector</RepositoryUrl>
+        <PackageReadmeFile>README_nuget.md</PackageReadmeFile>
+        <RepositoryType>git</RepositoryType>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageIcon>images\icon.png</PackageIcon>
+        <NuGetAuditMode>all</NuGetAuditMode>
+        <NuGetAuditLevel>high</NuGetAuditLevel>
+        <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Umbraco.Automate" Version="17.0.0-beta"/>
+        <PackageReference Include="Umbraco.Cms.Core" Version="[17.4.0,18.0.0)"/>
+        <PackageReference Include="Umbraco.Cms.Api.Common" Version="[17.4.0,18.0.0)"/>
+        <PackageReference Include="Umbraco.Cms.Api.Management" Version="[17.4.0,18.0.0)"/>
+        <PackageReference Include="jcdcdev.Umbraco.Core" Version="[17.0.0,18.0.0)"/>
+        <PackageReference Include="Umbraco.Community.SimpleDashboards" Version="[17.0.0,18.0.0)"/>
+    </ItemGroup>
+
+    <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+        <Major>17</Major>
+        <Minor>$([System.DateTime]::UtcNow.ToString(`yyyy`))</Minor>
+        <Patch>$([System.DateTime]::UtcNow.ToString(`MMdd`).TrimStart(`0`))</Patch>
+        <Suffix>-alpha-$([System.DateTime]::UtcNow.ToString(`Hmm-ss`).TrimStart(`.`))</Suffix>
+        <PackageVersion>$(Major).$(Minor).$(Patch)$(Suffix)</PackageVersion>
+        <Version>$(PackageVersion)</Version>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\..\docs\icon.png" Pack="true" PackagePath="images\icon.png"/>
+        <None Include="..\..\docs\README_nuget.md" Pack="true" PackagePath="\"/>
+    </ItemGroup>
+
+</Project>

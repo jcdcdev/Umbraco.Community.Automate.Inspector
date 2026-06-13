@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33020.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5A6D3C2C-E986-4648-ABD7-ED442746EEBC}"
+	ProjectSection(SolutionItems) = preProject
+		..\LICENSE = ..\LICENSE
+		..\.github\README.md = ..\.github\README.md
+		..\.github\CONTRIBUTING.md = ..\.github\CONTRIBUTING.md
+		..\docs\README_nuget.md = ..\docs\README_nuget.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2060F159-0A7B-4484-A6C2-1995A3EF19B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2060F159-0A7B-4484-A6C2-1995A3EF19B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2060F159-0A7B-4484-A6C2-1995A3EF19B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2060F159-0A7B-4484-A6C2-1995A3EF19B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B17A21EE-0666-406F-BAA7-649AE9E23CDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B17A21EE-0666-406F-BAA7-649AE9E23CDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B17A21EE-0666-406F-BAA7-649AE9E23CDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B17A21EE-0666-406F-BAA7-649AE9E23CDA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F07004F-9903-4AEB-9ED0-BE57A0326D20}
+	EndGlobalSection
+EndGlobal
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Github", "Github", "{5830A86F-99DA-459D-82FD-A24613A9F22F}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\release.yml = ..\.github\workflows\release.yml
+		..\.github\workflows\build.yml = ..\.github\workflows\build.yml
+		..\.github\ISSUE_TEMPLATE\bug.yml = ..\.github\ISSUE_TEMPLATE\bug.yml
+		..\.github\ISSUE_TEMPLATE\config.yml = ..\.github\ISSUE_TEMPLATE\config.yml
+		..\.github\ISSUE_TEMPLATE\feature_request.yml = ..\.github\ISSUE_TEMPLATE\feature_request.yml
+		..\.github\workflows\sync-branches.yml = ..\.github\workflows\sync-branches.yml
+		..\.github\workflows\update-releases.yml = ..\.github\workflows\update-releases.yml
+		..\.github\CONTRIBUTING.md = ..\.github\CONTRIBUTING.md
+		..\.github\dependabot.yml = ..\.github\dependabot.yml
+		..\.github\README.md = ..\.github\README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Community.Automate.Inspector", "Umbraco.Community.Automate.Inspector\Umbraco.Community.Automate.Inspector.csproj", "{2060F159-0A7B-4484-A6C2-1995A3EF19B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Community.Automate.Inspector.TestSite", "Umbraco.Community.Automate.Inspector.TestSite\Umbraco.Community.Automate.Inspector.TestSite.csproj", "{B17A21EE-0666-406F-BAA7-649AE9E23CDA}"
+EndProject
