@@ -13,12 +13,12 @@ jobs:
     steps:
       - name: Build
         id: build
-        uses: jcdcdev/jcdcdev.Umbraco.GitHub.Build@v17
+        uses: jcdcdev/jcdcdev.Umbraco.GitHub.Build@v18
         with:
           project-name: Umbraco.Community.Automate.Inspector
           project-path: src/Umbraco.Community.Automate.Inspector/Umbraco.Community.Automate.Inspector.csproj
       - name: Release
-        uses: jcdcdev/jcdcdev.Umbraco.GitHub.Release@v17
+        uses: jcdcdev/jcdcdev.Umbraco.GitHub.Release@v18
         with:
           artifact-name: ${{ steps.build.outputs.artifact-name }}
           version: ${{ steps.build.outputs.version }}
