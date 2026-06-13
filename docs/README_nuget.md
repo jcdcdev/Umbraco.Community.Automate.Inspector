@@ -1,16 +1,19 @@
-# Umbraco.Community.Automate.Inspector
+# Automate Inspector
 
-[![Umbraco Marketplace](https://img.shields.io/badge/Umbraco-Marketplace-%233544B1?style=flat&logo=umbraco)](https://marketplace.umbraco.com/package/Umbraco.Community.Automate.Inspector)
-[![NuGet](https://img.shields.io/nuget/vpre/Umbraco.Community.Automate.Inspector?color=0273B3)](https://www.nuget.org/packages/Umbraco.Community.Automate.Inspector)
-[![GitHub license](https://img.shields.io/github/license/jcdcdev/Umbraco.Community.Automate.Inspector?color=8AB803)](https://github.com/jcdcdev/Umbraco.Community.Automate.Inspector/blob/13/LICENSE)
-[![Downloads](https://img.shields.io/nuget/dt/Umbraco.Community.Automate.Inspector?color=cc9900)](https://www.nuget.org/packages/Umbraco.Community.Automate.Inspector/)
+[![Documentation](https://jcdc.dev/badge/Documentation/primary/book)](https://docs.jcdc.dev/umbraco-community-automate-inspector/latest)
+[![Umbraco Marketplace](https://jcdc.dev/badge/Umbraco%20Marketplace/umbraco/umbraco)](https://marketplace.umbraco.com/package/Umbraco.Community.Automate.Inspector)
+[![GitHub](https://jcdc.dev/badge/GitHub/github/github)](https://github.com/jcdcdev/Umbraco.Community.Automate.Inspector)
+[![NuGet package downloads](https://jcdc.dev/badge/nuget/Umbraco.Community.Automate.Inspector)](https://www.nuget.org/packages/Umbraco.Community.Automate.Inspector)
+[![Project Website](https://jcdc.dev/badge/Project%20Website/primary/laptop)](https://jcdc.dev/umbraco-packages/automate-inspector)
 
-## Quick Start
 
-## Configuration
+## Security
 
-## Extending
+This project takes security and support seriously.
+Please visit the [Security](https://github.com/jcdcdev/Umbraco.Community.Automate.Inspector?tab=security-ov-file) page for more information.
 
 ## Contributing
 
-## Acknowledgments (thanks!)
+Contributions to this package are most welcome! Please visit the [Contributing](https://github.com/jcdcdev/Umbraco.Community.Automate.Inspector/contribute) page.
+
+
