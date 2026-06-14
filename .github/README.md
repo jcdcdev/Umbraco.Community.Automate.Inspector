@@ -7,6 +7,9 @@
 [![Project Website](https://jcdc.dev/badge/Project%20Website/primary/laptop)](https://jcdc.dev/umbraco-packages/automate-inspector)
 
 
+
+This package adds documentation for Umbraco Automate, empowering developers by providing living documentation of all Actions, Triggers and Connections.
+
 > [!NOTE]
 > Version 18 is not released yet.
 
