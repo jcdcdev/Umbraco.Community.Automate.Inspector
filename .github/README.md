@@ -10,9 +10,6 @@
 
 This package adds documentation for Umbraco Automate, empowering developers by providing living documentation of all Actions, Triggers and Connections.
 
-> [!NOTE]
-> Version 18 is not released yet.
-
 ## Installation
 
 ### Install Package
