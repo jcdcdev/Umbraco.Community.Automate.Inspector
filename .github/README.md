@@ -7,8 +7,7 @@
 [![Project Website](https://jcdc.dev/badge/Project%20Website/primary/laptop)](https://jcdc.dev/umbraco-packages/automate-inspector)
 
 
-
-This package adds documentation for Umbraco Automate, empowering developers by providing living documentation of all Actions, Triggers and Connections.
+This Umbraco package provides comprehensive, living documentation for Umbraco Automate, empowering developers with real-time insights into all available Actions, Triggers and Connections. Enhance your development workflow with automatically generated documentation that stays current with your Umbraco Automate implementation, saving valuable development time and improving team collaboration.
 
 ## Installation
 
