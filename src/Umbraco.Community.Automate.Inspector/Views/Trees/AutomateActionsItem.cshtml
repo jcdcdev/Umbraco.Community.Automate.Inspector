@@ -1,0 +1,44 @@
+﻿@using Umbraco.Automate.Core.Actions
+@using System.Linq
+@inherits Umbraco.Community.SimpleTrees.Web.SimpleTreeViewPage
+@inject ActionCollection Actions
+
+@{
+    var action = Actions.GetByAlias(Model.Unique);
+    if (action == null)
+    {
+        <div class="alert alert-danger">
+            Action with alias '@Model.Unique' not found.
+        </div>
+        return;
+    }
+
+    var settings = action.GetSettingsSchema();
+    var settingsFields = settings?.Fields ?? [];
+    var output = action.OutputType;
+    var outputFields = output?.GetProperties().OrderBy(x => x.Name).ToList() ?? [];
+}
+
+<uui-box headline="Details" style="margin-bottom: 30px;">
+    <div>
+        <p><strong>Name:</strong> @action.Name</p>
+        <p><strong>Alias:</strong> @action.Alias</p>
+        <p><strong>Description:</strong> @action.Description</p>
+        <p><strong>Icon:</strong> @action.Icon</p>
+        <p><strong>Connection Type:</strong> @action.ConnectionTypeAlias</p>
+        <p><strong>Permissions:</strong> @string.Join("\n", action.RequiredPermissions)</p>
+        <p><strong>Sections:</strong> @string.Join("\n", action.RequiredSections)</p>
+    </div>
+</uui-box>
+
+<uui-box headline="Inputs" style="margin-bottom: 30px;">
+    @await Html.PartialAsync("~/Views/Partials/AutomateInspector/SettingsTable.cshtml", settingsFields)
+</uui-box>
+
+<uui-box headline="Outputs">
+    <uui-table aria-label="Outputs">
+        @await Html.PartialAsync("~/Views/Partials/AutomateInspector/PropertyTable.cshtml", outputFields)
+    </uui-table>
+</uui-box>
+
+
