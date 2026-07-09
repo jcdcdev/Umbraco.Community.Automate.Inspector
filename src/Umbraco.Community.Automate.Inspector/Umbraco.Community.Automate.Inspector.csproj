@@ -27,7 +27,7 @@
 
     <ItemGroup>
         <PackageReference Include="JetBrains.Annotations" Version="2025.2.4"/>
-        <PackageReference Include="Umbraco.Automate" Version="17.0.0-beta"/>
+        <PackageReference Include="Umbraco.Automate" Version="[17.0.0,18.0.0)"/>
         <PackageReference Include="Umbraco.Cms.Core" Version="[17.4.0,18.0.0)"/>
         <PackageReference Include="Umbraco.Cms.Api.Common" Version="[17.4.0,18.0.0)"/>
         <PackageReference Include="Umbraco.Cms.Api.Management" Version="[17.4.0,18.0.0)"/>
